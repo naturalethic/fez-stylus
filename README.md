@@ -11,9 +11,11 @@ npm install fez-stylus
 Example:
 
 ```
-stylus = require 'fez-stylus'
+var stylus = require('fez-stylus');
 
-build = (stage) ->
-  stage (rule) ->
-    rule 'source/*.styl', 'target/index.css', stylus()
+var build = function(stage) {
+  return stage(function(rule) {
+    return rule('source/*.styl', 'target/index.css', stylus());
+  });
+};
 ```
