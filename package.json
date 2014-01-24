@@ -1,0 +1,20 @@
+{
+  "name": "fez-stylus",
+  "version": "0.42.1",
+  "main": "src/main.js",
+  "description": "A Stylus operation for the Fez build system.",
+  "keywords": [
+    "fez",
+    "stylus"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/naturalethic/fez-stylus"
+  },
+  "dependencies": {
+    "xtend": "~2.1.2",
+    "bluebird": "~0.11.6-0",
+    "stylus": "~0.42.1",
+    "nib": "~1.0.2"
+  }
+}
