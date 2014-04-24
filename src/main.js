@@ -10,13 +10,12 @@ module.exports = function(options) {
 
   return function stylus(inputs) {
     return Promise.all(inputs.asBuffers()).then(function(buffers) {
-      return buffers.map(function(b) {
-        var output = null;
-        Stylus(b.toString()).use(nib()).import("nib").render(function(e, o) {
-          output = o;
-        });
-        return output;
-      }).join(options.separator);
+      var output;
+      var source = buffers.map(function(buffer) { return buffer.toString() }).join('\n');
+      Stylus(source).use(nib()).import("nib").render(function(e, o) {
+        output = o;
+      });
+      return output;
     });
   };
 };
